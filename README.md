@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧑‍💻 Muhammad Ali - Developer Portfolio
 
-## Getting Started
+A clean, responsive portfolio built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**, featuring a secure contact form powered by **Resend** and **Invisible reCAPTCHA**.
 
-First, run the development server:
+<br/>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+- ⚡️ Blazing fast and modern stack (Next.js + App Router)
+- 🎨 Styled using Tailwind CSS with responsive design
+- 📬 Contact form with email delivery via Resend
+- 🛡️ Spam protection using Invisible Google reCAPTCHA v2
+- 🌐 Deployed on [ali-muhammad.xyz](https://ali-muhammad.xyz)
+- 💼 Sections: Home, About, Projects, Contact
+
+<br/>
+
+## 📷 Home Page Preview
+
+> Includes a professional intro and your photo side by side.
+
+<br/>
+
+## 🛠️ Technologies Used
+
+- [Next.js 14](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Resend Email API](https://resend.com/)
+- [Google reCAPTCHA v2 (Invisible)](https://www.google.com/recaptcha/)
+- [Vercel Deployment](https://vercel.com)
+
+<br/>
+
+## 📁 Project Structure
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+src/
+app/
+page.tsx         # Home
+about/
+contact/
+page.tsx       # Contact form
+components/
+Navbar.tsx
+Footer.tsx
+...
+public/
+assets/
+profile.jpg      # Your photo
+.env.local           # Env vars for resend & recaptcha
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+````
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<br/>
 
-## Learn More
+## ⚙️ Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file in the root:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+RESEND_API_KEY=your-resend-api-key
+RECAPTCHA_SECRET_KEY=your-recaptcha-secret-key
+````
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+These should also be set in Vercel for deployment.
 
-## Deploy on Vercel
+<br/>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📬 Contact Form Logic
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Client-side form uses `react-google-recaptcha` to trigger **Invisible reCAPTCHA**.
+* If verified, it sends the form data to `/api/contact` route.
+* Backend verifies the token and sends the email via Resend.
+
+<br/>
+
+## 🚀 Running Locally
+
+```bash
+git clone https://github.com/your-username/portfolio-site.git
+cd portfolio-site
+npm install
+npm run dev
+```
+
+Then open `http://localhost:3000`.
+
+---
+
+## 🌐 Deployment
+
+This project is optimized for [Vercel](https://vercel.com):
+
+1. Push your repo to GitHub
+2. Import the project in Vercel
+3. Set your environment variables
+4. Assign your custom domain (`ali-muhammad.xyz`)
+5. Done 🎉
+
+---
+
+## 🙋‍♂️ About Me
+
+Hi, I'm **Muhammad Ali** — a passionate developer with interests in **AI/ML**, **blockchain**, and **quantum computing**.
+I've done my B.Tech in **Artificial Intelligence and Machine Learning**, and I actively participate in **competitive programming**.
+
+* Expert on Codeforces (Rank: Top 600 globally)
+* 4⭐ on Codechef
+* Passionate about building real-world tech solutions.
+
+<br/>
+
+## 📫 Contact
+
+Want to collaborate or hire? Use the [Contact Form](https://ali-muhammad.xyz/contact) — powered by reCAPTCHA & Resend!
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+
