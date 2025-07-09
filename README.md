@@ -17,7 +17,7 @@ A clean, responsive portfolio built with **Next.js 14**, **TypeScript**, and **T
 
 ## 📷 Home Page Preview
 
-> Includes a professional intro and your photo side by side.
+Includes a professional intro and your photo side by side.
 
 <br/>
 
