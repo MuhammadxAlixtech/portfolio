@@ -1,17 +1,15 @@
-// src/app/contact/page.tsx
-
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [status, setStatus] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -21,25 +19,26 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!captchaToken) {
-      setStatus("Please complete the captcha.");
+    setStatus("Verifying...");
+
+    const token = await recaptchaRef.current?.executeAsync();
+    recaptchaRef.current?.reset();
+
+    if (!token) {
+      setStatus("reCAPTCHA failed.");
       return;
     }
-
-    setStatus("Sending...");
 
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, captchaToken }),
+      body: JSON.stringify({ ...formData, captchaToken: token }),
     });
 
     const result = await res.json();
-
     if (result.success) {
       setStatus("Message sent!");
       setFormData({ name: "", email: "", message: "" });
-      setCaptchaToken(null);
     } else {
       setStatus(result.error || "Failed to send message.");
     }
@@ -58,7 +57,7 @@ export default function Contact() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-[#819A91]"
+            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
         <div>
@@ -70,7 +69,7 @@ export default function Contact() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-[#819A91]"
+            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
         <div>
@@ -82,13 +81,17 @@ export default function Contact() {
             required
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-[#819A91]"
+            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
+
+        {/* Invisible reCAPTCHA */}
         <ReCAPTCHA
-          sitekey="6LeGMHMrAAAAAIILjSWr68FGtFbU0Tr_QUP9pTJt"
-          onChange={(token) => setCaptchaToken(token)}
+          sitekey="6LdRmH0rAAAAAJ-HV7kI61lFPmjd2VGUJLWMuv2y"
+          size="invisible"
+          ref={recaptchaRef}
         />
+
         <button
           type="submit"
           className="px-6 py-3 bg-[#819A91] text-white rounded-lg hover:bg-[#A7C1A8] transition"
