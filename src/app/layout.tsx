@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import type { ReactNode } from "react";
 
 export const metadata = {
-  title: "Muhammad Ali Portfolio",
+  title: "Muhammad Ali",
   description: "Competitive Programmer | AI-ML | Blockchain Enthusiast",
 };
 
