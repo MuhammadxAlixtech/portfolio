@@ -1,6 +1,8 @@
 // src/app/page.tsx
+"use client";
 import Image from "next/image";
 import ProjectCard from "@/components/ProjectCard";
+import { Typewriter } from 'react-simple-typewriter';
 
 const projects = [
   {
@@ -23,8 +25,17 @@ export default function Home() {
         <div className=" text-center md:text-left space-y-4 px-10 py-10">
           <h1 className="text-4xl text-[#254D70] font-bold ">Hi, I'm Muhammad Ali</h1>
           <p className="text-lg">
-            Software Engineer, AI-ML Enthusiast. I love solving challenging problems and building real-world solutions using technology.          
- 
+            <Typewriter
+              words={[
+                'Software Engineer, AI-ML Enthusiast. I love solving challenging problems and building real-world solutions using technology.'
+              ]}
+              loop={1}
+              cursor
+              cursorStyle='|'
+              typeSpeed={40}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
           </p>
         </div>
         <div className="md:w-1/5">
