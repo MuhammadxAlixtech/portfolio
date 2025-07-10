@@ -27,7 +27,7 @@ export default function Home() {
           <p className="text-lg">
             <Typewriter
               words={[
-                'Software Engineer, AI-ML Enthusiast. I love solving challenging problems and building real-world solutions using technology.'
+                'Software Engineer, Solving complex problems with AI, blockchain, and algorithms.'
               ]}
               loop={1}
               cursor
