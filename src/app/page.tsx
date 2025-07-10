@@ -37,7 +37,7 @@ export default function Home() {
                   ]}
                   loop={1}
                   cursor
-                  cursorStyle='|'
+                  cursorStyle='\'
                   typeSpeed={40}
                   deleteSpeed={50}
                   delaySpeed={1000}
