@@ -24,27 +24,19 @@ export default function Home() {
        <section className="flex flex-col md:flex-row items-center justify-center py-12">
         <div className=" text-center md:text-left space-y-4 px-10 py-10">
           <h1 className="text-4xl text-[#254D70] font-bold ">Hi, I'm Muhammad Ali</h1>
-          {/* Replaced <p> with <div> to avoid invalid HTML structure */}
-          <div className="text-lg">
-            <div style={{ position: 'relative', display: 'inline-block', whiteSpace: 'pre' }}>
-              <span style={{ visibility: 'hidden', whiteSpace: 'pre' }}>
-                Software Engineer, Solving complex problems with AI, blockchain, and algorithms.
-              </span>
-              <span style={{ position: 'absolute', left: 0, top: 0, whiteSpace: 'pre', display: 'inline-block' }}>
-                <Typewriter
-                  words={[
-                    'Software Engineer, Solving complex problems with AI, blockchain, and algorithms.'
-                  ]}
-                  loop={1}
-                  cursor
-                  cursorStyle='\'
-                  typeSpeed={40}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
-              </span>
-            </div>
-          </div>
+          <p className="text-lg min-h-[2rem]">
+            <Typewriter
+              words={[
+                'Software Engineer, Solving complex problems with AI, blockchain, and algorithms.'
+              ]}
+              loop={1}
+              cursor
+              cursorStyle='|'
+              typeSpeed={40}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </p>
         </div>
         <div className="md:w-1/5">
           <Image
@@ -65,7 +57,7 @@ export default function Home() {
             <ProjectCard key={project.title} {...project} />
           ))}
         </div>
-      </section>
+       </section>
     </div>
   );
 }
