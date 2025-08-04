@@ -1,5 +1,8 @@
 // src/components/Navbar.tsx
 import Link from "next/link";
+"use client"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   return (
@@ -9,7 +12,7 @@ export default function Navbar() {
           <Link href="/" className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
             Muhammad Ali
           </Link>
-          <div className="flex gap-
+          <div className="flex gap-8">
             <Link
               href="/"
               className={`${
