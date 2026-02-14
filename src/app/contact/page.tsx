@@ -18,7 +18,6 @@ export default function Contact() {
       </div>
 
       <p className="mt-8 text-sm text-gray-500">
-        (Formatted to prevent spam bots)
       </p>
     </div>
   );
