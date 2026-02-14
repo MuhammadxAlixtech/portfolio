@@ -11,7 +11,7 @@ interface ProjectProps {
 
 export default function ProjectCard({ title, description, link }: ProjectProps) {
   return (
-    <div className="group border border-gray-100 dark:border-gray-800 p-6 rounded-2xl hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-300 bg-white dark:bg-zinc-900/50">
+    <div className="group border border-gray-100 dark:border-gray-800 p-6 rounded-lg hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-300 bg-white dark:bg-zinc-900/50">
       <div className="flex justify-between items-start mb-4">
         <h3 className="text-xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {title}

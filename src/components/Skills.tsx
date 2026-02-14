@@ -31,7 +31,7 @@ export default function Skills() {
                             {category.skills.map((skill) => (
                                 <span
                                     key={skill}
-                                    className="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"
+                                    className="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 rounded-md text-sm font-medium"
                                 >
                                     {skill}
                                 </span>

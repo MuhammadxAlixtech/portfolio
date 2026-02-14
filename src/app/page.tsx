@@ -57,14 +57,14 @@ export default function Home() {
             <a
               href="/Muhammad_Ali_Resume.pdf"
               download="Muhammad_Ali_Resume.pdf"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition-opacity"
             >
               <FaDownload size={14} />
               Download Resume
             </a>
             <Link
               href="/contact"
-              className="px-6 py-3 border border-gray-200 dark:border-gray-700 rounded-full font-medium hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors"
+              className="px-5 py-2.5 text-sm border border-gray-200 dark:border-gray-700 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors"
             >
               Contact Me
             </Link>
@@ -75,7 +75,7 @@ export default function Home() {
             src="/PFP.jpg"
             alt="Muhammad Ali"
             fill
-            className="rounded-full object-cover border-4 border-white dark:border-black shadow-2xl"
+            className="rounded-2xl object-cover border-4 border-white dark:border-black shadow-2xl"
             priority
           />
         </div>
@@ -102,7 +102,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold mb-8">Achievements</h2>
         <div className="grid gap-4">
           {achievements.map((item, idx) => (
-            <div key={idx} className="p-6 rounded-2xl bg-gray-50 dark:bg-zinc-900/50 border border-gray-100 dark:border-gray-800">
+            <div key={idx} className="p-6 rounded-lg bg-gray-50 dark:bg-zinc-900/50 border border-gray-100 dark:border-gray-800">
               <h3 className="font-bold text-lg">{item.title}</h3>
               <p className="text-gray-600 dark:text-gray-400 mt-1">{item.detail}</p>
             </div>
