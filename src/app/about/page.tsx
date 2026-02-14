@@ -7,7 +7,7 @@ export default function About() {
         <h1 className="text-4xl font-bold">About Me</h1>
         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
           I am a software engineer and researcher with a deep passion for solving complex problems.
-          My journey in technology is driven by curiosity—whether it's diving into the depths of
+          My journey in technology is driven by curiosity,whether it's diving into the depths of
           cryptographic algorithms, optimizing machine learning models, or building seamless web experiences.
         </p>
         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
