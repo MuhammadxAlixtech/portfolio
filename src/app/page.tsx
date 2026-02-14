@@ -9,7 +9,7 @@ import { FaDownload } from "react-icons/fa";
 const projects = [
   {
     title: "Personal Portfolio Website",
-    description: "Built responsive, production-deployed portfolio with server-side rendering and modern UI components. Added secure contact form using Resend + Google reCAPTCHA v2 to prevent spam.",
+    description: "A minimalist, responsive portfolio built with Next.js 15 (Canary) and React 19. Features a clean monochrome design, server-side rendering, and secure email obfuscation.",
     link: "https://github.com/MuhammadxAlixtech", // Placeholder link if not provided
   },
   {
