@@ -1,25 +1,28 @@
-// src/app/layout.tsx
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import type { ReactNode } from "react";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata = {
-  title: "Muhammad Ali",
-  description: "Competitive Programmer | AI-ML | Blockchain Enthusiast",
+  title: "Muhammad Ali | Software Engineer",
+  description: "Competitive Programmer | AI/ML Researcher | Full Stack Developer",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-[#EEEFE0] text-gray-900">
+      <body className={`${inter.variable} antialiased min-h-screen flex flex-col`}>
         <Navbar />
-        <div className="flex flex-col min-h-screen">
-          <main className="flex-grow p-8">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <main className="flex-grow pt-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
