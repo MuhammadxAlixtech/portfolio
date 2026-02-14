@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
-    "next": "latest",
+    "next": "canary",
     "nodemailer": "^7.0.4",
     "react": "latest",
     "react-dom": "latest",
