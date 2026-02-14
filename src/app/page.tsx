@@ -55,7 +55,7 @@ export default function Home() {
           </p>
           <div className="flex gap-4 justify-center md:justify-start pt-4">
             <a
-              href="/Muhammad_Ali_resume.pdf"
+              href="/Muhammad_Ali_Resume.pdf"
               download="Muhammad_Ali_Resume.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium hover:opacity-90 transition-opacity"
             >
